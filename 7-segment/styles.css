@@ -2,7 +2,6 @@
 body {
     justify-content: center;
     align-items: center;
-    height: 70vh;
     margin: 0;
     background-color: #383737;
     font-family: 'Inter', sans-serif;
@@ -11,12 +10,6 @@ body {
 
 .container {
     text-align: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    color: #fff;
 }
 
 /* Base styles for all segments */
@@ -31,14 +24,14 @@ h1 {
 
 /* Vertical Segments (b, c, e, f) */
 .segment.vertical {
-    width: 30px;
-    height: 100px;
+    width: 24px;
+    height: 80px;
 }
 
 /* Horizontal Segments (a, d, g) */
 .segment.horizontal {
-    width: 100px;
-    height: 30px;
+    width: 80px;
+    height: 24px;
 }
 
 .segment_controls {
@@ -51,6 +44,7 @@ h1 {
 
     width: 34px;
     height: 60px;
+    bottom: 30px;
 }
 
 /* Hide default HTML checkbox */
@@ -241,24 +235,24 @@ body:has(#toggle-5:checked) {
 .b {
     opacity: var(--b);
     top: 25px;
-    right: -100px;
+    right: -80px;
 }
 
 .c {
     opacity: var(--c);
-    bottom: 25px;
-    right: -100px;
+    bottom: 65px;
+    right: -80px;
 }
 
 .d {
     opacity: var(--d);
-    bottom: 0;
+    bottom: 40px;
     left: 125px;
 }
 
 .e {
     opacity: var(--e);
-    bottom: 25px;
+    bottom: 65px;
     left: 100px;
 }
 
@@ -270,7 +264,7 @@ body:has(#toggle-5:checked) {
 
 .g {
     opacity: var(--g);
-    top: 120px;
+    top: 104px;
     left: 125px;
 }
 .h{
@@ -286,20 +280,20 @@ body:has(#toggle-5:checked) {
 
 .j{
     opacity: var(--j);
-    bottom: 25px;
+    bottom: 65px;
     right: 100px;
 }
 
 .k{
     opacity: var(--k);
-    bottom: 0;
-    left: -75px;
+    bottom: 40px;
+    left: -55px;
 }
 
 .l{
     opacity: var(--l);
-    bottom: 25px;
-    left: -100px;
+    bottom: 65px;
+    left: -80px;
 }
 
 .m{
@@ -310,6 +304,6 @@ body:has(#toggle-5:checked) {
 
 .n{
     opacity: var(--n);
-    top: 120px;
-    left: -75px;
+    top: 104px;
+    left: -55px;
 }
