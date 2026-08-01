@@ -1,7 +1,4 @@
-/*
-TemplateMo 621 Luminary
-https://templatemo.com/tm-621-luminary
-*/
+
 
 // ── Smooth Scroll (JS-driven, overrides CSS) ──
 document.querySelectorAll('a[href^="#"]').forEach(link => {
