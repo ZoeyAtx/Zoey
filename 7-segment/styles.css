@@ -2,7 +2,7 @@
 body {
     justify-content: center;
     align-items: center;
-    height: 95vh;
+    height: 70vh;
     margin: 0;
     background-color: #383737;
     font-family: 'Inter', sans-serif;
@@ -48,7 +48,7 @@ h1 {
 .switch {
     position: relative;
     display: inline-block;
-    top: 350px;
+
     width: 34px;
     height: 60px;
 }
