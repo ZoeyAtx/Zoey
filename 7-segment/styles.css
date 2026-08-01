@@ -1,0 +1,315 @@
+/* General body styling for centering and background */
+body {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #383737;
+    font-family: 'Inter', sans-serif;
+    color: #ccc;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* Base styles for all segments */
+.segment {
+    position: absolute;
+    background-color: #bb21f3;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    display: grid;
+    place-items: center;
+}
+
+/* Vertical Segments (b, c, e, f) */
+.segment.vertical {
+    width: 30px;
+    height: 100px;
+}
+
+/* Horizontal Segments (a, d, g) */
+.segment.horizontal {
+    width: 100px;
+    height: 30px;
+}
+
+.segment_controls {
+    display: flex;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    top: 350px;
+    width: 34px;
+    height: 60px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    top: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #7921f3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #7921f3;
+}
+
+input:checked+.slider:before {
+    transform: translateY(26px);
+}
+
+html {
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1
+}
+
+body:has(#toggle-1:checked) {
+    --t1: 1;
+    --_t1: 0;
+}
+
+body:has(#toggle-2:checked) {
+    --t2: 1;
+    --_t2: 0;
+}
+
+body:has(#toggle-3:checked) {
+    --t3: 1;
+    --_t3: 0;
+}
+
+body:has(#toggle-4:checked) {
+    --t4: 1;
+    --_t4: 0;
+}
+
+body:has(#toggle-5:checked) {
+    --t5: 1;
+    --_t5: 0;
+}
+
+/* 
+      0  00000
+      1  00001
+      2  00010
+      3  00011
+      4  00100
+      5  00101
+      6  00110
+      7  00111
+      8  01000
+      9  01001 
+     10  01010
+     11  01011
+     12  01100
+     13  01101
+     14  01110
+     15  01111
+     16  10000
+     17  10001
+     18  10010
+     19  10011 
+     20  10100
+     21  10101
+     22  10110
+     23  10111
+     24  11000
+     25  11001
+     26  11010
+     27  11011
+     28  11100
+     29  11101
+     30  11110
+     31  11111
+    */
+.seven-segment-display {
+    --n0: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--_t4) * var(--_t5));
+    --n1: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--_t4) * var(--t5));
+    --n2: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--t4) * var(--_t5));
+    --n3: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--t4) * var(--t5));
+    --n4: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--_t4) * var(--_t5));
+    --n5: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--_t4) * var(--t5));
+    --n6: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--t4) * var(--_t5));
+    --n7: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--t4) * var(--t5));
+    --n8: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--_t4) * var(--_t5));
+    --n9: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--_t4) * var(--t5));
+    --n10: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--t4) * var(--_t5));
+    --n11: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--t4) * var(--t5));
+    --n12: calc(var(--_t1) * var(--t2) * var(--t3) * var(--_t4) * var(--_t5));
+    --n13: calc(var(--_t1) * var(--t2) * var(--t3) * var(--_t4) * var(--t5));
+    --n14: calc(var(--_t1) * var(--t2) * var(--t3) * var(--t4) * var(--_t5));
+    --n15: calc(var(--_t1) * var(--t2) * var(--t3) * var(--t4) * var(--t5));
+    --n16: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--_t4) * var(--_t5));
+    --n17: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--_t4) * var(--t5));
+    --n18: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--t4) * var(--_t5));
+    --n19: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--t4) * var(--t5));
+    --n20: calc(var(--t1) * var(--_t2) * var(--t3) * var(--_t4) * var(--_t5));
+    --n21: calc(var(--t1) * var(--_t2) * var(--t3) * var(--_t4) * var(--t5));
+    --n22: calc(var(--t1) * var(--_t2) * var(--t3) * var(--t4) * var(--_t5));
+    --n23: calc(var(--t1) * var(--_t2) * var(--t3) * var(--t4) * var(--t5));
+    --n24: calc(var(--t1) * var(--t2) * var(--_t3) * var(--_t4) * var(--_t5));
+    --n25: calc(var(--t1) * var(--t2) * var(--_t3) * var(--_t4) * var(--t5));
+    --n26: calc(var(--t1) * var(--t2) * var(--_t3) * var(--t4) * var(--_t5));
+    --n27: calc(var(--t1) * var(--t2) * var(--_t3) * var(--t4) * var(--t5));
+    --n28: calc(var(--t1) * var(--t2) * var(--t3) * var(--_t4) * var(--_t5));
+    --n29: calc(var(--t1) * var(--t2) * var(--t3) * var(--_t4) * var(--t5));
+    --n30: calc(var(--t1) * var(--t2) * var(--t3) * var(--t4) * var(--_t5));
+    --n31: calc(var(--t1) * var(--t2) * var(--t3) * var(--t4) * var(--t5));
+
+    --digit: calc(var(--n0) + var(--n1) + var(--n2) + var(--n3) + var(--n4) + var(--n5) + var(--n6) + var(--n7) + var(--n8) + var(--n9) + var(--n10) + var(--n11) + var(--n12) + var(--n13) + var(--n14) + var(--n15) + var(--n16) + var(--n17) + var(--n18) + var(--n19) + var(--n20) + var(--n21) + var(--n22) + var(--n23) + var(--n24) + var(--n25) + var(--n26) + var(--n27) + var(--n28) + var(--n29) + var(--n30) + var(--n31));
+    --second_digit: calc(var(--n10) + var(--n11) + var(--n12) + var(--n13) + var(--n14) + var(--n15) + var(--n16) + var(--n17) + var(--n18) + var(--n19) + var(--n20) + var(--n21) + var(--n22) + var(--n23) + var(--n24) + var(--n25) + var(--n26) + var(--n27) + var(--n28) + var(--n29) + var(--n30) + var(--n31));
+    --tens_digit: calc(var(--n10) + var(--n11) + var(--n12) + var(--n13) + var(--n14) + var(--n15) + var(--n16) + var(--n17) + var(--n18) + var(--n19));
+    --twenties_digit: calc(var(--n20) + var(--n21) + var(--n22) + var(--n23) + var(--n24) + var(--n25) + var(--n26) + var(--n27) + var(--n28) + var(--n29));
+    --thirties_digit: calc(var(--n30) + var(--n31));
+
+    --a: calc(var(--digit) - var(--n1) - var(--n4) - var(--n11) - var(--n14) - var(--n21) - var(--n24) - var(--n31));
+    --b: calc(var(--digit) - var(--n5) - var(--n6) - var(--n15) - var(--n16) - var(--n25) - var(--n26));
+    --c: calc(var(--digit) - var(--n2) - var(--n12) - var(--n22));
+    --d: calc(var(--digit) - var(--n1) - var(--n4) - var(--n7) - var(--n11) - var(--n14) - var(--n17) - var(--n21) - var(--n24) - var(--n27) - var(--n31));
+    --e: calc(var(--digit) - var(--n1) - var(--n3) - var(--n4) - var(--n5) - var(--n7) - var(--n9) - var(--n11) - var(--n13) - var(--n14) - var(--n15) - var(--n17) - var(--n19) - var(--n21) - var(--n23) - var(--n24) - var(--n25) - var(--n27) - var(--n29) - var(--n31));
+    --f: calc(var(--digit) - var(--n1) - var(--n2) - var(--n3) - var(--n7) - var(--n11) - var(--n12) - var(--n13) - var(--n17) - var(--n21) - var(--n22) - var(--n23) - var(--n27) - var(--n31));
+    --g: calc(var(--digit) - var(--n0) - var(--n1) - var(--n7) - var(--n10) - var(--n11) - var(--n17) - var(--n20) - var(--n21) - var(--n27) - var(--n30) - var(--n31));
+    --h: calc(var(--second_digit) - var(--tens_digit));
+    --i: calc(var(--second_digit));
+    --j: calc(var(--second_digit) - var(--twenties_digit));
+    --k: calc(var(--second_digit) - var(--tens_digit));
+    --l: calc(var(--second_digit) - var(--tens_digit) - var(--thirties_digit));
+    --m: calc(0);
+    --n: calc(var(--second_digit) - var(--tens_digit));
+
+    position: relative;
+    width: 150px;
+    height: 270px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #000;
+}
+
+.a {
+    opacity: var(--a);
+    top: 0;
+    left: 125px;
+}
+
+.b {
+    opacity: var(--b);
+    top: 25px;
+    right: -100px;
+}
+
+.c {
+    opacity: var(--c);
+    bottom: 25px;
+    right: -100px;
+}
+
+.d {
+    opacity: var(--d);
+    bottom: 0;
+    left: 125px;
+}
+
+.e {
+    opacity: var(--e);
+    bottom: 25px;
+    left: 100px;
+}
+
+.f {
+    opacity: var(--f);
+    top: 25px;
+    left: 100px;
+}
+
+.g {
+    opacity: var(--g);
+    top: 120px;
+    left: 125px;
+}
+.h{
+    opacity: var(--h);
+    top: 0;
+    right: 125px;
+}
+.i{
+    opacity: var(--i);
+    top: 25px;
+    right: 100px;
+}
+
+.j{
+    opacity: var(--j);
+    bottom: 25px;
+    right: 100px;
+}
+
+.k{
+    opacity: var(--k);
+    bottom: 0;
+    left: -75px;
+}
+
+.l{
+    opacity: var(--l);
+    bottom: 25px;
+    left: -100px;
+}
+
+.m{
+    opacity: var(--m);
+    top: 25px;
+    left: -100px;
+}
+
+.n{
+    opacity: var(--n);
+    top: 120px;
+    left: -75px;
+}

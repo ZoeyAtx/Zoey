@@ -646,12 +646,22 @@ body.menu-open .top-nav { background: rgba(15,17,21,0.95); backdrop-filter: blur
   transition: transform 0.8s var(--silk-ease), border-color 0.8s var(--silk-ease), box-shadow 0.8s var(--silk-ease);
 }
 .project-visual {
-  min-height: 130px; border-radius: 22px; padding: 20px; display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; border-radius: 22px; padding: 0; display: flex; flex-direction: column; justify-content: flex-end;
   background: linear-gradient(135deg, rgba(176,184,196,0.2), rgba(156,163,175,0.06));
-  border: 1px solid rgba(176,184,196,0.12);
+  border: 1px solid rgba(176,184,196,0.12); overflow: hidden;
 }
 .project-visual-alt {
   background: linear-gradient(135deg, rgba(176,184,196,0.14), rgba(176,184,196,0.04));
+}
+.project-visual-video {
+  aspect-ratio: 16 / 9;
+}
+.project-visual-video .project-video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; background: #07090c;
+}
+.project-visual-video .project-visual-overlay {
+  position: relative; z-index: 1; padding: 20px; margin-top: auto;
+  background: linear-gradient(180deg, transparent 0%, rgba(7, 9, 12, 0.55) 60%, rgba(7, 9, 12, 0.85) 100%);
 }
 .project-visual span {
   font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--silver); margin-bottom: 8px;
