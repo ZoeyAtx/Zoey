@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zoe / freelance developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,6 +15,23 @@
   <rect width="100%" height="100%" filter="url(#n)"/>
 </svg>
 <div class="atmosphere"></div>
+
+<header class="top-nav" id="topNav">
+  <a class="nav-brand" href="#hero">ZOE<span>/ATX</span></a>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="#about">About</a><a href="#projects">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"><span class="toggle-bar"></span><span class="toggle-bar"></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <a class="mobile-menu-link" data-index="01" href="#about">About</a><a class="mobile-menu-link" data-index="02" href="#projects">Work</a><a class="mobile-menu-link" data-index="03" href="#skills">Skills</a><a class="mobile-menu-link" data-index="04" href="#contact">Contact</a>
+    </nav>
+    <div class="mobile-menu-footer"><a href="mailto:zoeyheroldova@gmail.com">zoeyheroldova@gmail.com</a><span>Available for work</span></div>
+  </div>
+</div>
 
 <nav class="side-panel left" aria-label="Scroll indicators">
   <span class="side-label">Scroll</span>

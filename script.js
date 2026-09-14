@@ -92,8 +92,8 @@ const menu = document.getElementById('mobileMenu');
 const menuLinks = menu.querySelectorAll('.mobile-menu-link');
 let menuOpen = false;
 
-function openMenu() { menuOpen = true; toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true'); menu.classList.add('open'); document.body.classList.add('menu-open'); }
-function closeMenu() { if (!menuOpen) return; menuOpen = false; toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }
+function openMenu() { menuOpen = true; toggle.classList.add('active'); toggle.setAttribute('aria-expanded', 'true'); menu.setAttribute('aria-hidden', 'false'); menu.classList.add('open'); document.body.classList.add('menu-open'); }
+function closeMenu() { if (!menuOpen) return; menuOpen = false; toggle.classList.remove('active'); toggle.setAttribute('aria-expanded', 'false'); menu.setAttribute('aria-hidden', 'true'); menu.classList.remove('open'); document.body.classList.remove('menu-open'); }
 
 toggle.addEventListener('click', () => menuOpen ? closeMenu() : openMenu());
 menuLinks.forEach(l => l.addEventListener('click', closeMenu));
